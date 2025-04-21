@@ -25,7 +25,7 @@ function ProfileCard() {
       <div className="w-64 h-64 rounded-full border-4 border-mainaccent shadow-lg overflow-hidden flex items-center justify-center animate-fade-in-scale">
         <img src={animalImageUrl} alt={animal} className="scale-125" />
       </div>
-      <div className="flex flex-col items-center sm:items-start font-baloo animate-fade-in-up">
+      <div className="flex flex-col items-center sm:items-start font-baloo animate-fade-in-up sm:animate-fade-in-right">
         <h2 className="text-4xl font-bold">Hi, I'm Vitto!</h2>
         <p className="text-white text-2xl font-bold">Front end web developer</p>
         <p className="text-white">2+ Years</p>
