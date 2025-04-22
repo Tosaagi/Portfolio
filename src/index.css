@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Pacifico&display=swap");
 @import "tailwindcss";
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
 @theme {
   /* Colors */
-  --color-mainaccent: #88C999;
+  --color-mainaccent: #88c999;
 
   /* Fonts */
-  --font-baloo: "Baloo 2", sans-serif; 
+  --font-baloo: "Baloo 2", sans-serif;
   --font-pacifico: "Pacifico", sans-serif;
 
   /* Animations */
@@ -88,5 +88,23 @@
     }
   }
 
-  --animate-wiggle-in: wiggle 0.3s ease-out;
+  --animate-wiggle-in: wiggle-in 0.5s ease-out;
+  @keyframes wiggle-in {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-4deg);
+    }
+    40% {
+      transform: rotate(3deg);
+    }
+    60% {
+      transform: rotate(-2deg);
+    }
+    80% {
+      transform: rotate(1deg);
+    }
+  }
 }

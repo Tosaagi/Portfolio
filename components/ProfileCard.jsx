@@ -18,8 +18,13 @@ const getRandomAnimal = () => {
 
 function ProfileCard() {
   const [animal, setAnimal] = useState(getRandomAnimal());
-  const animalImageUrl = `https://ssl.gstatic.com/docs/common/profile/${animal.toLowerCase()}_lg.png`;
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
+
+  const animalImageUrl = `https://ssl.gstatic.com/docs/common/profile/${animal.toLowerCase()}_lg.png`;
   const handleGetRandomAnimal = () => {
     const newAnimal = getRandomAnimal();
     setAnimal(newAnimal);
@@ -33,7 +38,8 @@ function ProfileCard() {
             <img
               src={animalImageUrl}
               alt={animal}
-              className="group-hover:animate-wiggle-left"
+              className={isLoaded ? 'scale-115 animate-wiggle-in group-hover:animate-wiggle-left' : ''}
+              onLoad={handleImageLoad}
             />
           </div>
         </div>
