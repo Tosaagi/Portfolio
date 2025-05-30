@@ -44,7 +44,7 @@ function ProfileCard() {
           </div>
         </div>
       </button>
-      <div className="flex flex-col items-center sm:items-start font-baloo animate-fade-in-up sm:animate-fade-in-right">
+      <div className="flex flex-col items-center sm:items-start animate-fade-in-up sm:animate-fade-in-right">
         <h2 className="text-4xl font-bold">Hi, I'm Vitto!</h2>
         <p className="text-white text-2xl font-bold">Front end web developer</p>
         <p className="text-gray-300">2+ Years</p>

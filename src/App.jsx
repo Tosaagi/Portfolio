@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar"
 import ProfileCard from "../components/ProfileCard"
 import SkillsDisplay from "../components/SkillsDisplay"
+import Footer from "../components/Footer"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <ProfileCard />
       <SkillsDisplay />
+      <Footer />
     </div>
   )
 }
