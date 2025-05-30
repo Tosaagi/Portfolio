@@ -26,8 +26,8 @@ function SkillsDisplay() {
       <h2 className="text-3xl font-bold">My Skills</h2>
 
       {/* Scroll indicator gradient */}
-      <div className="pointer-events-none absolute left-0 top-0 -bottom-2 w-8 bg-gradient-to-r from-gray-900 to-transparent z-10 sm:hidden" />
-      <div className="pointer-events-none absolute right-0 top-0 -bottom-2 w-8 bg-gradient-to-l from-gray-900 to-transparent z-10 sm:hidden" />
+      <div className="pointer-events-none absolute left-0 top-0 -bottom-2 w-8 bg-gradient-to-r from-black to-transparent z-10 sm:hidden" />
+      <div className="pointer-events-none absolute right-0 top-0 -bottom-2 w-8 bg-gradient-to-l from-black to-transparent z-10 sm:hidden" />
 
       {/* Left & Right Tap Zones */}
       <div
