@@ -23,7 +23,7 @@ function SkillsDisplay() {
 
   return (
     <section className="relative flex flex-col w-full justify-center items-center space-y-2 animate-fade-in-up">
-      <h2 className="text-3xl font-bold">My Skills</h2>
+      <h2 id="skills" className="scroll-mt-20 text-3xl font-bold">My Skills</h2>
 
       {/* Scroll indicator gradient */}
       <div className="pointer-events-none absolute left-0 top-0 -bottom-2 w-8 bg-gradient-to-r from-[#121212] to-transparent z-10 sm:hidden" />

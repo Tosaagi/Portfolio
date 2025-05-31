@@ -1,9 +1,9 @@
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin, FaItchIo } from 'react-icons/fa';
 
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300 py-8 mt-16 border-gray-800 border-t">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
         
         {/* Branding */}
         <div className="text-lg font-semibold">
@@ -20,6 +20,9 @@ export default function Footer() {
           </a>
           <a href="https://instagram.com/_alvitto" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             <FaInstagram />
+          </a>
+          <a href="https://tosaagi.itch.io/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaItchIo/>
           </a>
         </div>
       </div>

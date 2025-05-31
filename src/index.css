@@ -108,4 +108,16 @@
       transform: rotate(1deg);
     }
   }
+
+  --animate-bounce-144: bounce-144 0.416s infinite;
+  @keyframes bounce-144 {
+    0%, 100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
 }
