@@ -19,11 +19,11 @@ function ScrollIndicator() {
 
   return (
     <div
-      className={`hidden sm:block fixed bottom-[-60px] left-1/2 transform -translate-x-1/2 transition-opacity duration-500 ${
+      className={`flex fixed -bottom-20 left-0 w-full h-[180px] justify-center items-center transition-opacity duration-500 ${
         show ? "opacity-100" : "opacity-0"
-      } bg-[#121212]/50 shadow-[0_10px_30px_rgba(0,0,0,0.3)] rounded-full p-4`}
+      } bg-gradient-to-t from-[#121212] to-transparent shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-50`}
     >
-      <PiMouseScroll className="text-3xl text-mainaccent animate-bounce" />
+      <PiMouseScroll className="hidden sm:block text-3xl text-mainaccent animate-bounce mt-15" />
     </div>
   );
 }
