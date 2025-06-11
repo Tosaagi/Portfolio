@@ -1,10 +1,11 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState, useEffect } from 'react'
 
-const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'About', href: '#about', current: false },
-  { name: 'Skills', href: '#skills', current: false },
+const navigationLinks = [
+  { name: 'Home', href: '#', id: 'home' },
+  { name: 'About', href: '#about', id: 'about' },
+  { name: 'Skills', href: '#skills', id: 'skills' },
 ]
 
 function classNames(...classes) {
@@ -12,6 +13,34 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState('home')
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigationLinks.map(link => document.getElementById(link.id)).filter(section => section);
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      if (window.scrollY === 0) {
+        setActiveSection('home');
+        return;
+      }
+
+      for (const section of sections) {
+        if (section.id === 'home') continue;
+        const offsetTop = section.offsetTop;
+        const offsetHeight = section.offsetHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveSection(section.id);
+          return;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Disclosure as="nav" className="sticky top-0 z-50 max-w-7xl mx-auto bg-[#121212]">
       <div className="mx-auto px-2 sm:px-6 lg:px-8 border-gray-400 border-dotted border-b">
@@ -25,19 +54,22 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <div className="hidden sm:block">
               <div className="flex justify-center space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? ' text-mainaccent' : 'text-gray-300 hover:text-mainaccent',
-                      'rounded-md px-3 py-2 text-sm font-medium',
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                {navigationLinks.map((item) => {
+                  const current = item.id === activeSection;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      aria-current={current ? 'page' : undefined}
+                      className={classNames(
+                        current ? ' text-mainaccent' : 'text-gray-300 hover:text-mainaccent',
+                        'rounded-md px-3 py-2 text-sm font-medium',
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
@@ -60,20 +92,23 @@ export default function Navbar() {
 
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pt-2 pb-3 border-white rounded-md border-1 z-10">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? ' text-mainaccent hover:bg-gray-900' : 'text-gray-300 hover:text-mainaccent hover:bg-gray-900',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
-          ))}
+          {navigationLinks.map((item) => {
+            const current = item.id === activeSection;
+            return (
+              <DisclosureButton
+                key={item.name}
+                as="a"
+                href={item.href}
+                aria-current={current ? 'page' : undefined}
+                className={classNames(
+                  current ? ' text-mainaccent hover:bg-gray-900' : 'text-gray-300 hover:text-mainaccent hover:bg-gray-900',
+                  'block rounded-md px-3 py-2 text-base font-medium',
+                )}
+              >
+                {item.name}
+              </DisclosureButton>
+            );
+          })}
         </div>
       </DisclosurePanel>
     </Disclosure>
