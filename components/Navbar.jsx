@@ -1,12 +1,10 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
   { name: 'About', href: '#about', current: false },
   { name: 'Skills', href: '#skills', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Contacts', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -18,18 +16,6 @@ export default function Navbar() {
     <Disclosure as="nav" className="sticky top-0 z-50 max-w-7xl mx-auto bg-[#121212]">
       <div className="mx-auto px-2 sm:px-6 lg:px-8 border-gray-400 border-dotted border-b">
         <div className="relative flex h-16 items-center justify-between">
-          {/* Mobile: Notification icon (left) */}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <button
-              type="button"
-              className="relative rounded-full p-1 text-gray-400 hover:text-mainaccent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
-            </button>
-          </div>
-
           {/* Center: Logo */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
             <div className="flex sm:w-full items-center justify-center sm:justify-start">
@@ -57,14 +43,6 @@ export default function Navbar() {
 
             {/* Desktop: Notification icon (right) */}
             <div className="hidden sm:flex items-center pr-2 sm:ml-6 sm:pr-0">
-              <button
-                type="button"
-                className="relative rounded-full p-1 text-gray-400 hover:text-mainaccent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-              >
-                <span className="absolute -inset-1.5" />
-                <span className="sr-only">View notifications</span>
-                <BellIcon aria-hidden="true" className="size-6" />
-              </button>
             </div>
           </div>
 
