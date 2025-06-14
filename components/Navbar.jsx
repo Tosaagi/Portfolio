@@ -43,8 +43,6 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = (id) => {
-    setActive(id);
-    // Optional: smooth scroll to the section
     document.getElementById(id.replace('#', ''))?.scrollIntoView({ behavior: 'smooth' });
   };
 
