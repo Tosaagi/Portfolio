@@ -26,7 +26,7 @@ function ProfileCard() {
   }
 
   return (
-    <main className="flex flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-8">
+    <main id="home" className="flex flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-8 scroll-mt-50">
       <button className="group animate-fade-in-scale hover:cursor-pointer rounded-full overflow-hidden" onClick={handleGetRandomAnimal}>
         <div className="w-64 h-64 rounded-full border-4 border-mainaccent shadow-lg overflow-hidden flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-95">
           <div className="transition-transform duration-300 ease-in-out group-hover:scale-125 origin-center">
