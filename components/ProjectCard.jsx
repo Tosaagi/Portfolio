@@ -18,7 +18,7 @@ const ExternalLinkIcon = () => (
 // Individual Project Card Component
 const ProjectCard = ({ project }) => {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
+    <div className="group flex flex-col overflow-hidden rounded-xl bg-gray-800 shadow-md transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
         <div className="relative">
           <a href={project.githubUrl}>
             <img 
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
             <div className="absolute bottom-0 left-0 p-4">
                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
-                    <span key={index} className="rounded-full bg-blue-500/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                    <span key={index} className="rounded-full bg-mainaccent px-3 py-1 text-xs font-semibold text-black">
                         {tag}
                     </span>
                     ))}
@@ -40,8 +40,8 @@ const ProjectCard = ({ project }) => {
             </div>
         </div>
         <div className="flex flex-1 flex-col p-6">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
-            <p className="mt-3 flex-1 text-gray-600 dark:text-gray-300">{project.description}</p>
+            <h3 className="text-xl font-bold text-mainaccent">{project.title}</h3>
+            <p className="mt-3 flex-1 text-gray-300">{project.description}</p>
             <div className="mt-6 flex items-center justify-start gap-4">
               {project.liveUrl && (
               <a
