@@ -20,13 +20,15 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-md transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2">
         <div className="relative">
+          <a href={project.githubUrl}>
             <img 
                 src={project.imageUrl} 
                 alt={project.title} 
                 className="h-56 w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'; }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+          </a>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 p-4">
                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
@@ -41,14 +43,21 @@ const ProjectCard = ({ project }) => {
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
             <p className="mt-3 flex-1 text-gray-600 dark:text-gray-300">{project.description}</p>
             <div className="mt-6 flex items-center justify-start gap-4">
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    <ExternalLinkIcon />
-                    Live Demo
-                </a>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                    <GitHubIcon />
-                    GitHub
-                </a>
+              {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                <ExternalLinkIcon />
+                Live Demo
+              </a>
+              )}
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                  <GitHubIcon />
+                  GitHub
+              </a>
             </div>
         </div>
     </div>
