@@ -24,6 +24,8 @@
   }
 
   --animate-fade-in-up: fade-in-up 0.3s ease-out;
+  --animate-menu-enter: fade-in-up 0.3s ease-out;
+  --animate-menu-leave: fade-in-up 0.3s ease-in reverse;
   @keyframes fade-in-up {
     0% {
       opacity: 0;
