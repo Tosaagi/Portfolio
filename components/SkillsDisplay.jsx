@@ -25,11 +25,9 @@ function SkillsDisplay() {
     <section id="skills" className="relative flex flex-col w-full justify-center items-center space-y-2 scroll-mt-20 animate-fade-in-up">
       <h2 className="text-3xl font-bold">My Skills</h2>
 
-      {/* Scroll indicator gradient */}
       <div className="pointer-events-none absolute left-0 top-0 -bottom-2 w-8 bg-gradient-to-r from-[#121212] to-transparent z-10 sm:hidden" />
       <div className="pointer-events-none absolute right-0 top-0 -bottom-2 w-8 bg-gradient-to-l from-[#121212] to-transparent z-10 sm:hidden" />
 
-      {/* Left & Right Tap Zones */}
       <div
         onClick={() => scrollByAmount("left")}
         className="absolute z-20 left-0 top-0 h-full w-10 sm:hidden"

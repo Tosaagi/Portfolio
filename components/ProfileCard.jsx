@@ -1,3 +1,4 @@
+import { FaGithub, FaInstagram, FaLinkedin, FaItchIo } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 
 const animals = [
@@ -40,9 +41,23 @@ function ProfileCard() {
       </button>
       <div className="flex flex-col items-center sm:items-start animate-fade-in-up sm:animate-fade-in-right">
         <h2 className="text-4xl font-bold">Hi, I'm Vitto!</h2>
-        <p className="text-white text-2xl font-bold">Front end web developer</p>
+        <p className="text-white text-2xl font-bold">Web Developer</p>
         <p className="text-gray-300">2+ Years</p>
-        <p className="text-gray-300 text-center">Based in Indonesia. Uses React.js with Tailwind CSS</p>
+        <p className="text-gray-300 text-center mb-6">Based in Indonesia. Uses React.js with Tailwind CSS</p>
+        <div className="flex space-x-10 text-xl">
+          <a href="https://github.com/tosaagi" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaGithub size={40}/>
+          </a>
+          <a href="https://linkedin.com/in/mochamad-ariva-alvitto" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaLinkedin size={40}/>
+          </a>
+          <a href="https://instagram.com/_alvitto" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaInstagram size={40}/>
+          </a>
+          <a href="https://tosaagi.itch.io/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaItchIo size={40}/>
+          </a>
+        </div>
       </div>
     </main>
   );

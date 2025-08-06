@@ -3,6 +3,15 @@ import ProjectCard from "./ProjectCard";
 const projects = [
   {
     id: 1,
+    title: 'BITSPLIT: a Bill Splitting App',
+    description: 'A dynamic web application designed to split bills among a group of people. it uses Artificial Intelligence to automatically read and process information from a receipt.',
+    imageUrl: 'https://tosaagi.github.io/assets/images/BITSPLIT.png',
+    tags: ['Python'],
+    liveUrl: 'https://bitsplit-cnh9ezhxgyh9hpf2.eastus-01.azurewebsites.net/',
+    githubUrl: 'https://github.com/Tosaagi/BITSPLIT',
+  },
+  {
+    id: 2,
     title: 'Python Sorted ToDo App',
     description: 'An automatic sorting to-do app. Just input your task name and the due date (in ddmmyy format), and the tasks will be sorted automatically.',
     imageUrl: 'https://tosaagi.github.io/assets/images/sorted_todo_app.png',
